@@ -34,51 +34,48 @@ $hora = $appointment['hora'];
 <body>
     
 <div id="login">
-            <form class="card">
-                <div class="card-header">
-<h1>Atualizar Compromisso</h1>
-</div>
-
-    <form method="post">
-    <div class="card-content">
-   
-   <div class="card-content-area">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" value="<?php echo $nome; ?>" required></br>
+    <form class="card" method="post">
+        <div class="card-header">
+            <h1>Atualizar Compromisso</h1>
         </div>
 
-        <div class="card-content-area">
-        <label for="email">Email</label>
-        <input type="text" name="email" value="<?php echo $email;?>" required></br>
-        </div> 
+        <div class="card-content">
+            <div class="card-content-area">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" value="<?php echo $nome; ?>" required><br>
+            </div>
 
-        <div class="card-content-area">
-        <label for="telefone">Telefone</label>
-        <input type="text" name="telefone" value="<?php echo $telefone;?>" required></br>
-        </div>
+            <div class="card-content-area">
+                <label for="email">Email</label>
+                <input type="text" name="email" value="<?php echo $email;?>" required><br>
+            </div> 
 
-        <div class="card-content-area">
-        <label for="endereco">Endereço</label>
-        <input type="text" name="endereco" value="<?php echo $endereco;?>" required></br>
-        </div>
+            <div class="card-content-area">
+                <label for="telefone">Telefone</label>
+                <input type="text" name="telefone" value="<?php echo $telefone;?>" required><br>
+            </div>
+
+            <div class="card-content-area">
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" value="<?php echo $endereco;?>" required><br>
+            </div>
         
-        <div class="card-content-area">
-        <label for="data">Data</label>
-        <input type="text" name="data" value="<?php echo $data;?>" required></br>
-        </div>
+            <div class="card-content-area">
+                <label for="data">Data</label>
+                <input type="text" name="data" value="<?php echo $data;?>" required><br>
+            </div>
 
-        <div class="card-content-area">
-        <label for="hora">Hora</label>
-        <input type="text" name="hora" value="<?php echo $hora;?>" required></br>
-        </div>
+            <div class="card-content-area">
+                <label for="hora">Hora</label>
+                <input type="text" name="hora" value="<?php echo $hora;?>" required><br>
+            </div>
 
-        <div class="card-footer">
-        <button class="submit" type="submit">Atualizar</button>
+            <div class="card-footer">
+                <button class="submit" type="submit">Atualizar</button>
+            </div>
         </div>
     </form>
-
-</body>
-</html>
+</div>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -95,3 +92,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 ?>
+</body>
+</html>

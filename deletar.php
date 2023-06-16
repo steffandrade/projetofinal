@@ -9,9 +9,9 @@ if (!isset($_GET['id'])) {
 $id = $_GET['id'];
 $stmt = $pdo->prepare('SELECT * FROM agendamentos WHERE id = ?');
 $stmt->execute([$id]);
-$apoointment = $stmt->fetch(PDO::FETCH_ASSOC);
+$appointment = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$apoointment) {
+if (!$appointment) {
     header('Location: listar.php');
     exit;
 }
@@ -35,20 +35,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     
 <div id="login">
-            <form class="card">
-                <div class="card-header">
-<h1>Deletar compromisso</h1>
-<p>Tem certeza que deseja deletar o compromisso de
-    <?php echo $apoointment['nome'];?>
-    em <?php echo date('d/m/Y', strtotime($apoointment['data']));?>
-    á <?php echo date('H:i', strtotime($apoointment['hora']));?></p>
-    <form method='post'>
-    
-    <div class="card-footer">
-    <button class="submit" type='submit'>Sim</button>
-        <a class="a" href="listar.php">Não</a>
+    <form class="card" method="post">
+        <div class="card-header">
+            <h1>Deletar compromisso</h1>
+            <p>Tem certeza que deseja deletar o compromisso de
+                <?php echo $appointment['nome'];?>
+                em <?php echo date('d/m/Y', strtotime($appointment['data']));?>
+                às <?php echo date('H:i', strtotime($appointment['hora']));?></p>
+        </div>
+        <div class="card-footer">
+            <button class="submit" type='submit'>Sim</button>
+            <a class="a" href="listar.php">Não</a>
+        </div>
     </form>
-                </div>
-                </div>
+</div>
 </body>
 </html>
